@@ -1,79 +1,85 @@
-# Flappy Monorepo
-
-<div align="center">
-
-[![License](https://img.shields.io/github/license/pleisto/flappy.svg)](https://raw.githubusercontent.com/pleisto/flappy/main/LICENSE)
-
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">飞扬的莫诺雷波</font></font></h1><a id="user-content-flappy-monorepo" class="anchor" aria-label="永久链接：Flappy Monorepo" href="#flappy-monorepo"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div align="center" dir="auto">
+<p dir="auto"><a href="https://raw.githubusercontent.com/pleisto/flappy/main/LICENSE" rel="nofollow"><img src="https://camo.githubusercontent.com/a4ce3858e578e3d91ba2d4c6335ee965bd835c3a9d981dea770c1fe121a58bdc/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f706c656973746f2f666c617070792e737667" alt="执照" data-canonical-src="https://img.shields.io/github/license/pleisto/flappy.svg" style="max-width: 100%;"></a></p>
 </div>
-
-
-> :warning: **This project is still under development.** We're working hard to release the first version of Flappy as soon as possible. Stay tuned! Documentation and code examples will be available soon.
-
-This monorepo gathers all the Flappy libraries, each implemented in a different programming language. Flappy is a library developed to streamline the creation of AI applications and agents that use Large Language Models (LLMs).
-
-## Overview
-
-Flappy is a production-ready Language Language Model (LLM) Application/Agent SDK designed to simplify AI integration in your projects. It is an easy-to-use, universally compatible, and production-ready solution that brings the power of AI to developers regardless of their preferred programming language.
-
-## Key Features
-
-- **Ease of Use**: Flappy is designed to be as user-friendly as CRUD application development, minimizing the learning curve for developers new to AI.
-- **Production-Ready**: Beyond research, Flappy is a robust SDK that balances cost-efficiency and sandbox security to provide a stable platform for commercial environments.
-- **Language-Agnostic**: Flappy integrates seamlessly with any programming language, eliminating the need for Python unless explicitly required by your application.
-
-## SDK
-
-|   | Source | Package | Documentation  | CI Status |
-| - | ------ | ------- | -------------- | --------- |
-| <img src="./assets/languages/nodejs.png" width=24px height=24px> | [**NodeJS**][NodeJS integration] | [![NPM version](https://img.shields.io/npm/v/%40pleisto/node-flappy/next.svg)](https://npmjs.org/package/@pleisto/node-flappy) | [![Documentation](https://img.shields.io/badge/documentation-documentation.svg)](https://flappy.pleisto.com) | [![CI](https://img.shields.io/github/actions/workflow/status/pleisto/flappy/nodejs-ci.yml.svg)](https://github.com/pleisto/flappy/actions/workflows/nodejs-ci.yml) |
-| <img src="./assets/languages/java.svg" width=24px height=24px>    | [**Java**][Kotlin integration]    | [![Maven metadata URL](https://img.shields.io/maven-metadata/v.svg?metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fpleisto%2Fflappy%2Fmaven-metadata.xml&color=blue)](https://central.sonatype.com/artifact/com.pleisto/flappy) | [![Documentation](https://img.shields.io/badge/documentation-documentation.svg)](https://javadoc.io/doc/com.pleisto/flappy) | [![CI](https://img.shields.io/github/actions/workflow/status/pleisto/flappy/kotlin-ci.yml.svg)](https://github.com/pleisto/flappy/actions/workflows/kotlin-ci.yml)
-| <img src="./assets/languages/csharp.svg" width=24px height=24px>     | [**C#**][C# integration]         | [![NuGet version (Pleisto.Flappy)](https://img.shields.io/nuget/v/Pleisto.Flappy.svg?style=flat-square)](https://www.nuget.org/packages/Pleisto.Flappy/) | [![Documentation](https://img.shields.io/badge/documentation-documentation.svg)](https://flappy.pleisto.com) | [![CI](https://img.shields.io/github/actions/workflow/status/pleisto/flappy/csharp-ci.yml.svg)](https://github.com/pleisto/flappy/actions/workflows/csharp-ci.yml) |
-
-[nodejs integration]: ./packages/nodejs/README.md
-[kotlin integration]: ./packages/kotlin/README.md
-[c# integration]: ./packages/csharp/README.md
-
-## Core Components
-
-### Agent Features
-
-In Flappy's ecosystem, an agent operates as a versatile conduit for the LLM, performing a variety of tasks such as ETL data, invoking external APIs, or running LLM-generated Python code in a sandbox when needed. This design philosophy caters to the increasing demand for LLM-based AI applications across various sectors.
-
-The agent features in Flappy are built on three foundational types:
-
-1. **InvokeFunction**: This feature allows agents to interact with the environment. Users should implement these functions with pre-defined input and output parameters, facilitating efficient interaction of LLM and real world data.
-2. **SynthesizedFunction**: This feature is processed by the LLM and only requires the definition of its description and the data structure declaration of the input and output types.
-3. **CodeInterpreter** This feature allows agents to eval python code produced by LLMs in a safe sandbox that reduces runtime errors and potential security vulnerabilities, making it suitable for deployment in a production environment.
-
-#### Function Implementation Details
-
-Flappy introduces unique implementation mechanisms to enhance these functions:
-
-- **Unique JSON Schema Integration**: Users can define abstract classes in their preferred programming language, which is then transformed into JSON Schema schemas by Flappy. This feature enhances machine readability and interoperability and manages the inputs and outputs of LLMs, providing controlled, consistent, and machine-readable data.
-- **AST Parsing**: Flappy performs Abstract Syntax Tree (AST) parsing on the LLM outputs to ensure that the generated JSON data strictly adheres to the defined JSON Schema.
-
-### LLM Abstraction Layer
-
-To enhance the flexibility of application development, Flappy provides an abstraction layer for different LLMs. This feature allows users to easily switch between different LLMs and designate fallback LLMs, ensuring application stability.
-
-Flappy empowers developers to build LLM-based applications in a language-agnostic way. Start your journey with Flappy today and harness the immense potential of AI in your preferred programming language.
-
-## Getting Started
-
-To begin with Flappy, select your preferred language implementation from the list below:
-
-- [Node.js](./packages/nodejs/README.md)
-- [Kotlin&Java](./packages/kotlin/README.md)
-- Ruby (coming soon)
-- PHP (coming soon)
-- [C#](./packages/csharp/README.md)
-- Go (coming soon)
-- Python (coming soon)
-
-## Contributing
-
-We're thrilled to receive contributions from the community! For more details, please refer to our [contributing guidelines](./CONTRIBUTING.md).
-
-## License
-
-This project is covered under the [Apache License 2.0](./LICENSE). Copyright (c) 2023 Pleisto Inc.
+<blockquote>
+<p dir="auto"><g-emoji class="g-emoji" alias="warning"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">⚠️</font></font></g-emoji> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目仍在开发中。</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们正在努力尽快发布 Flappy 的第一个版本。敬请关注！文档和代码示例将很快提供。</font></font></p>
+</blockquote>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这个 monorepo 收集了所有 Flappy 库，每个库都以不同的编程语言实现。 Flappy 是一个库，旨在简化使用大型语言模型 (LLM) 的 AI 应用程序和代理的创建。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">概述</font></font></h2><a id="user-content-overview" class="anchor" aria-label="永久链接：概述" href="#overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flappy 是一款可投入生产的语言模型 (LLM) 应用程序/代理 SDK，旨在简化项目中的 AI 集成。它是一种易于使用、普遍兼容且可立即投入生产的解决方案，可为开发人员带来人工智能的强大功能，无论他们首选的编程语言是什么。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主要特征</font></font></h2><a id="user-content-key-features" class="anchor" aria-label="永久链接：主要特点" href="#key-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">易于使用</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：Flappy 的设计与 CRUD 应用程序开发一样用户友好，最大限度地缩短了刚接触 AI 的开发人员的学习曲线。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">生产就绪</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：除了研究之外，Flappy 是一个强大的 SDK，可以平衡成本效率和沙箱安全性，为商业环境提供稳定的平台。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">与语言无关</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：Flappy 可以与任何编程语言无缝集成，除非您的应用程序明确要求，否则无需使用 Python。</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">软件开发工具包</font></font></h2><a id="user-content-sdk" class="anchor" aria-label="永久链接：SDK" href="#sdk"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">来源</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">包裹</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CI状态</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/pleisto/flappy/blob/main/assets/languages/nodejs.png"><img src="/pleisto/flappy/raw/main/assets/languages/nodejs.png" width="24px" height="24px" style="max-width: 100%;"></a></td>
+<td><a href="/pleisto/flappy/blob/main/packages/nodejs/README.md"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NodeJS</font></font></strong></a></td>
+<td><a href="https://npmjs.org/package/@pleisto/node-flappy" rel="nofollow"><img src="https://camo.githubusercontent.com/4b579ac725b5489d54a45aae17040b9b73c09f1f81c38f501fc69d2a25679065/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f253430706c656973746f2f6e6f64652d666c617070792f6e6578742e737667" alt="NPM版本" data-canonical-src="https://img.shields.io/npm/v/%40pleisto/node-flappy/next.svg" style="max-width: 100%;"></a></td>
+<td><a href="https://flappy.pleisto.com" rel="nofollow"><img src="https://camo.githubusercontent.com/60e365ea48b4450f6a1cd42d18c84d57b31a02d9956b113fe1de268fc4bb7f17/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f63756d656e746174696f6e2d646f63756d656e746174696f6e2e737667" alt="文档" data-canonical-src="https://img.shields.io/badge/documentation-documentation.svg" style="max-width: 100%;"></a></td>
+<td><a href="https://github.com/pleisto/flappy/actions/workflows/nodejs-ci.yml"><img src="https://camo.githubusercontent.com/c6480bf3a04352e4eab459b444b683e49fed5b704638309c4a9ad836f627ec4e/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f706c656973746f2f666c617070792f6e6f64656a732d63692e796d6c2e737667" alt="CI" data-canonical-src="https://img.shields.io/github/actions/workflow/status/pleisto/flappy/nodejs-ci.yml.svg" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/pleisto/flappy/blob/main/assets/languages/java.svg"><img src="/pleisto/flappy/raw/main/assets/languages/java.svg" width="24px" height="24px" style="max-width: 100%;"></a></td>
+<td><a href="/pleisto/flappy/blob/main/packages/kotlin/README.md"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">爪哇</font></font></strong></a></td>
+<td><a href="https://central.sonatype.com/artifact/com.pleisto/flappy" rel="nofollow"><img src="https://camo.githubusercontent.com/2bc95db700d2ec646807f1371bf0440fba2e484b1134878a7845f8c4e47f4cff/68747470733a2f2f696d672e736869656c64732e696f2f6d6176656e2d6d657461646174612f762e7376673f6d6574616461746155726c3d68747470732533412532462532467265706f312e6d6176656e2e6f72672532466d6176656e32253246636f6d253246706c656973746f253246666c617070792532466d6176656e2d6d657461646174612e786d6c26636f6c6f723d626c7565" alt="Maven 元数据 URL" data-canonical-src="https://img.shields.io/maven-metadata/v.svg?metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fcom%2Fpleisto%2Fflappy%2Fmaven-metadata.xml&amp;color=blue" style="max-width: 100%;"></a></td>
+<td><a href="https://javadoc.io/doc/com.pleisto/flappy" rel="nofollow"><img src="https://camo.githubusercontent.com/60e365ea48b4450f6a1cd42d18c84d57b31a02d9956b113fe1de268fc4bb7f17/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f63756d656e746174696f6e2d646f63756d656e746174696f6e2e737667" alt="文档" data-canonical-src="https://img.shields.io/badge/documentation-documentation.svg" style="max-width: 100%;"></a></td>
+<td><a href="https://github.com/pleisto/flappy/actions/workflows/kotlin-ci.yml"><img src="https://camo.githubusercontent.com/a96e520455e0b3a3babe1df12dfbfaba91784bdca3183e3094d14c7202d5e1dd/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f706c656973746f2f666c617070792f6b6f746c696e2d63692e796d6c2e737667" alt="CI" data-canonical-src="https://img.shields.io/github/actions/workflow/status/pleisto/flappy/kotlin-ci.yml.svg" style="max-width: 100%;"></a></td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="/pleisto/flappy/blob/main/assets/languages/csharp.svg"><img src="/pleisto/flappy/raw/main/assets/languages/csharp.svg" width="24px" height="24px" style="max-width: 100%;"></a></td>
+<td><a href="/pleisto/flappy/blob/main/packages/csharp/README.md"><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C＃</font></font></strong></a></td>
+<td><a href="https://www.nuget.org/packages/Pleisto.Flappy/" rel="nofollow"><img src="https://camo.githubusercontent.com/f01b376ccf3251394dce9b85d056ae283332e5c7546ec4904816824cf2beb96d/68747470733a2f2f696d672e736869656c64732e696f2f6e756765742f762f506c656973746f2e466c617070792e7376673f7374796c653d666c61742d737175617265" alt="NuGet 版本 (Pleisto.Flappy)" data-canonical-src="https://img.shields.io/nuget/v/Pleisto.Flappy.svg?style=flat-square" style="max-width: 100%;"></a></td>
+<td><a href="https://flappy.pleisto.com" rel="nofollow"><img src="https://camo.githubusercontent.com/60e365ea48b4450f6a1cd42d18c84d57b31a02d9956b113fe1de268fc4bb7f17/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f646f63756d656e746174696f6e2d646f63756d656e746174696f6e2e737667" alt="文档" data-canonical-src="https://img.shields.io/badge/documentation-documentation.svg" style="max-width: 100%;"></a></td>
+<td><a href="https://github.com/pleisto/flappy/actions/workflows/csharp-ci.yml"><img src="https://camo.githubusercontent.com/9d21c4ae02b8f1763751d6c8c66e009bb35bf0367118bcc9c1690ef14023674e/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f616374696f6e732f776f726b666c6f772f7374617475732f706c656973746f2f666c617070792f6373686172702d63692e796d6c2e737667" alt="CI" data-canonical-src="https://img.shields.io/github/actions/workflow/status/pleisto/flappy/csharp-ci.yml.svg" style="max-width: 100%;"></a></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">核心组件</font></font></h2><a id="user-content-core-components" class="anchor" aria-label="永久链接：核心组件" href="#core-components"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">代理特点</font></font></h3><a id="user-content-agent-features" class="anchor" aria-label="永久链接：代理功能" href="#agent-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 Flappy 的生态系统中，代理充当 LLM 的多功能管道，执行各种任务，例如 ETL 数据、调用外部 API，或在需要时在沙箱中运行 LLM 生成的 Python 代码。这种设计理念迎合了各行业对基于法学硕士的人工智能应用日益增长的需求。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flappy 中的代理功能基于三种基本类型：</font></font></p>
+<ol dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">InvokeFunction</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：此功能允许代理与环境交互。用户应使用预定义的输入和输出参数来实现这些功能，以促进LLM和现实世界数据的高效交互。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SynthesizedFunction</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：该功能由LLM处理，只需要定义其描述以及输入输出类型的数据结构声明。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CodeInterpreter</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此功能允许代理在安全沙箱中评估由 LLM 生成的 python 代码，从而减少运行时错误和潜在的安全漏洞，使其适合在生产环境中部署。</font></font></li>
+</ol>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">功能实现细节</font></font></h4><a id="user-content-function-implementation-details" class="anchor" aria-label="永久链接：功能实现细节" href="#function-implementation-details"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flappy 引入了独特的实现机制来增强这些功能：</font></font></p>
+<ul dir="auto">
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">独特的 JSON Schema 集成</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：用户可以用自己喜欢的编程语言定义抽象类，然后由 Flappy 将其转换为 JSON Schema 模式。此功能增强了机器可读性和互操作性，并管理法学硕士的输入和输出，提供受控、一致和机器可读的数据。</font></font></li>
+<li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">AST 解析</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：Flappy 对 LLM 输出执行抽象语法树 (AST) 解析，以确保生成的 JSON 数据严格遵循定义的 JSON 架构。</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LLM抽象层</font></font></h3><a id="user-content-llm-abstraction-layer" class="anchor" aria-label="永久链接：LLM 抽象层" href="#llm-abstraction-layer"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为了增强应用程序开发的灵活性，Flappy为不同的LLM提供了抽象层。此功能允许用户轻松地在不同的LLM之间切换并指定后备LLM，从而确保应用程序的稳定性。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Flappy 使开发人员能够以与语言无关的方式构建基于 LLM 的应用程序。立即开始您的 Flappy 之旅，用您喜欢的编程语言发挥 AI 的巨大潜力。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">入门</font></font></h2><a id="user-content-getting-started" class="anchor" aria-label="永久链接：开始使用" href="#getting-started"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要开始使用 Flappy，请从下面的列表中选择您首选的语言实现：</font></font></p>
+<ul dir="auto">
+<li><a href="/pleisto/flappy/blob/main/packages/nodejs/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Node.js</font></font></a></li>
+<li><a href="/pleisto/flappy/blob/main/packages/kotlin/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kotlin&amp;Java</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">红宝石（即将推出）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PHP（即将推出）</font></font></li>
+<li><a href="/pleisto/flappy/blob/main/packages/csharp/README.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">C＃</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">走吧（即将推出）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python（即将推出）</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们很高兴收到社区的贡献！有关更多详细信息，请参阅我们的</font></font><a href="/pleisto/flappy/blob/main/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2><a id="user-content-license" class="anchor" aria-label="永久链接：许可证" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目受</font></font><a href="/pleisto/flappy/blob/main/LICENSE"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apache License 2.0</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的保护。版权所有 (c) 2023 Pleisto Inc.</font></font></p>
+</article></div>
